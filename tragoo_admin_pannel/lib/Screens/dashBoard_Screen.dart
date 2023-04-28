@@ -178,14 +178,9 @@ class _dashBoardScreenState extends State<dashBoardScreen> {
                                 streamSnapshot.data!.docs.toList();
                             int totalOrders = OrdersList.length;
                             revenue = 0;
-                            print("*****************************************");
-                            print(OrdersList);
                             for (int i = 0; i < totalOrders; i++) {
                               revenue = revenue + OrdersList[i]['TotalPrice'];
                             }
-                            print(
-                                "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%PRICE***************");
-                            print(revenue);
                           }
                           return Row(
                             mainAxisAlignment: MainAxisAlignment.center,

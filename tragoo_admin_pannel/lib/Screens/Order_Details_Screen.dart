@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/TitleText.dart';
@@ -14,10 +15,29 @@ class OrdersDetails extends StatefulWidget {
 }
 
 class _OrdersDetailsState extends State<OrdersDetails> {
+  void markorderread() async {
+    final QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+        .collection('Orders')
+        .where('OrderNumber',
+            isEqualTo:
+                widget.OrderDetails[widget.index]['OrderNumber'].toString())
+        .get();
+
+    final DocumentSnapshot userDoc = querySnapshot.docs.first;
+    final DocumentReference userRef = userDoc.reference;
+
+    await userRef.update({'readorder': "true"});
+  }
+
+  @override
+  void initState() {
+    markorderread();
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    print(widget.OrderDetails[widget.index]['OrderNumber']);
-    print(widget.OrderDetails[widget.index]['OrderList'].length);
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(

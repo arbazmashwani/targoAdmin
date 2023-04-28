@@ -148,6 +148,36 @@ class _Orders_ScreenState extends State<Orders_Screen> {
                                 child: ListTile(
                                   title: Row(
                                     children: [
+                                      widget.searchOrder.isEmpty
+                                          ? filterordersList[index]["readorder"]
+                                                      .toString() ==
+                                                  "false"
+                                              ? Container(
+                                                  height: 10,
+                                                  width: 10,
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                          color: Colors.red,
+                                                          shape:
+                                                              BoxShape.circle),
+                                                )
+                                              : Container()
+                                          : filterordersList[index]["readorder"]
+                                                      .toString() ==
+                                                  "false"
+                                              ? Container(
+                                                  height: 10,
+                                                  width: 10,
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                          color: Colors.red,
+                                                          shape:
+                                                              BoxShape.circle),
+                                                )
+                                              : Container(),
+                                      const SizedBox(
+                                        width: 10,
+                                      ),
                                       const TitleText(
                                         text: "Order #",
                                         color: Colors.blue,

@@ -20,6 +20,7 @@ class _dashboardWidgetState extends State<dashboardWidget> {
   int totalCategories = 0;
   int totalProducts = 0;
   int totalOrders = 0;
+  var filterordersList = [];
   List userDoc = [];
   List OrdersList = [];
   List categoryList = [];
@@ -29,11 +30,11 @@ class _dashboardWidgetState extends State<dashboardWidget> {
     return GridView.count(
       crossAxisCount: 2,
       scrollDirection: Axis.vertical,
-      physics: NeverScrollableScrollPhysics(),
+      physics: const NeverScrollableScrollPhysics(),
       mainAxisSpacing: 10,
       shrinkWrap: true,
       childAspectRatio: 0.8,
-      padding: EdgeInsets.symmetric(vertical: 30),
+      padding: const EdgeInsets.symmetric(vertical: 30),
       children: <Widget>[
         StreamBuilder(
           stream:
@@ -130,26 +131,92 @@ class _dashboardWidgetState extends State<dashboardWidget> {
           builder: (context, AsyncSnapshot<QuerySnapshot> streamSnapshot) {
             if (streamSnapshot.connectionState == ConnectionState.active) {
               OrdersList = streamSnapshot.data!.docs.toList();
+
               totalOrders = OrdersList.length;
-              print("*****************************************");
-              print(OrdersList);
+
+              filterordersList = OrdersList.where(
+                      (element) => element["readorder"].toString() == "false")
+                  .toList();
+
+              // OrdersList.forEach((element) {
+              //   if (element["readorder"].toString() != "null") {
+              //     if (element["readorder"].toString() == "false") {
+              //       filterordersList.add(element);
+              //     }
+              //   }
+              // });
             }
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: dashboardCard(
-                Title: "Orders",
-                SubTitle: totalOrders.toString(),
-                icon: Icons.shopping_cart,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Orders_Screen(
-                              orderList: OrdersList,
-                              searchOrder: "",
+            return Container(
+              margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 2),
+              decoration: BoxDecoration(
+                color: Colors.blueGrey[100],
+                //Color(0XFFFFFFFF),
+
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
+                boxShadow: const <BoxShadow>[
+                  BoxShadow(
+                      color: Color(0xfff8f8f8),
+                      blurRadius: 15,
+                      spreadRadius: 10),
+                ],
+              ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: ListTile(
+                        title: TextButton.icon(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Orders_Screen(
+                                          orderList: OrdersList,
+                                          searchOrder: "",
+                                        )),
+                              );
+                            },
+                            icon: const Icon(Icons.shopping_cart),
+                            label: const TitleText(
+                              text: "Orders",
+                              fontWeight: FontWeight.w400,
                             )),
-                  );
-                },
+                        subtitle: Text(
+                          totalOrders.toString(),
+                          textAlign: TextAlign.center,
+                          style: GoogleFonts.mulish(
+                              fontSize: 60, color: Colors.blue),
+                        )),
+                  ),
+                  filterordersList.length != 0
+                      ? Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 10,
+                                width: 10,
+                                decoration: const BoxDecoration(
+                                    color: Colors.red, shape: BoxShape.circle),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                "${filterordersList.length.toString()} New Unread Orders",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.mulish(
+                                    fontSize: 13, color: Colors.blue),
+                              ),
+                            ],
+                          ),
+                        )
+                      : Container()
+                ],
               ),
             );
           },
@@ -182,7 +249,7 @@ class dashboardCard extends StatelessWidget {
   final String SubTitle;
   final IconData icon;
   final VoidCallback onPressed;
-  dashboardCard({
+  const dashboardCard({
     Key? key,
     required this.Title,
     required this.SubTitle,
@@ -193,13 +260,13 @@ class dashboardCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
+      margin: const EdgeInsets.symmetric(vertical: 2, horizontal: 2),
       decoration: BoxDecoration(
         color: Colors.blueGrey[100],
         //Color(0XFFFFFFFF),
 
-        borderRadius: BorderRadius.all(Radius.circular(10)),
-        boxShadow: <BoxShadow>[
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        boxShadow: const <BoxShadow>[
           BoxShadow(color: Color(0xfff8f8f8), blurRadius: 15, spreadRadius: 10),
         ],
       ),
