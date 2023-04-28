@@ -16,8 +16,13 @@ class _NotificationRouteState extends State<NotificationRoute> {
   void _doSomethingOnStart() async {
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
       _navigatorKey.currentState!.pushNamed('/notificationRoute');
-      orderid = message.notification!.body.toString();
+      orderid = getorderid(message.data).toString();
     });
+  }
+
+  String getorderid(Map<String, dynamic> message) {
+    String orderid = message['order_id'];
+    return orderid;
   }
 
   @override

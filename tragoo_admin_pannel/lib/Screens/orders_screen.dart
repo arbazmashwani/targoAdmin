@@ -21,6 +21,10 @@ class _Orders_ScreenState extends State<Orders_Screen> {
     if (widget.searchOrder == null) {
       widget.searchOrder = "";
       setState(() {});
+    } else {
+      setState(() {
+        searchcontroller.text = widget.searchOrder.toString();
+      });
     }
     // TODO: implement initState
     super.initState();
