@@ -8,7 +8,8 @@ class rightbar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 30, right: 40, left: 10),
       child: Container(
-        child: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
           child: Column(
             children: [
               Container(
@@ -69,113 +70,142 @@ class rightbar extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              SizedBox(
-                  height: 500,
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 10),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black12)),
-                      child: Column(
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Row(
-                              children: [
-                                Icon(
-                                  Icons.calendar_month,
-                                  size: 70,
-                                  color: Colors.blue,
-                                )
-                              ],
-                            ),
-                          ),
-                          const Padding(
-                            padding: EdgeInsets.only(left: 12),
-                            child: Row(
-                              children: [
-                                Expanded(
-                                  child: Text(
-                                    "Upcoming Events",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 35),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const ListTile(
-                            title: Text(
-                              "May  29",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600, fontSize: 16),
-                            ),
-                            subtitle: Row(
-                              children: [
-                                Text(
-                                  "Memorial day",
-                                  style: TextStyle(
-                                      decorationColor: Colors.blue,
-                                      decoration: TextDecoration.underline,
-                                      color: Colors.blue),
-                                )
-                              ],
-                            ),
-                          ),
-                          const ListTile(
-                            title: Text(
-                              "May  29",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600, fontSize: 16),
-                            ),
-                            subtitle: Row(
-                              children: [
-                                Text(
-                                  "Memorial day",
-                                  style: TextStyle(
-                                      decorationColor: Colors.blue,
-                                      decoration: TextDecoration.underline,
-                                      color: Colors.blue),
-                                )
-                              ],
-                            ),
-                          ),
-                          const ListTile(
-                            title: Text(
-                              "May  29",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600, fontSize: 16),
-                            ),
-                            subtitle: Row(
-                              children: [
-                                Text(
-                                  "Memorial day",
-                                  style: TextStyle(
-                                      decorationColor: Colors.blue,
-                                      decoration: TextDecoration.underline,
-                                      color: Colors.blue),
-                                )
-                              ],
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      SizedBox(
+                          height:
+                              MediaQuery.of(context).size.height / 2.5 + 100,
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: Colors.blue.withOpacity(0.20),
-                                  border: Border.all(color: Colors.blue)),
-                              height: 50,
-                              width: double.infinity,
-                              child: const Center(
-                                child: Text("Var todio"),
+                                  border: Border.all(color: Colors.black12)),
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  children: [
+                                    const Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Row(
+                                        children: [
+                                          Icon(
+                                            Icons.calendar_month,
+                                            size: 70,
+                                            color: Colors.blue,
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const Padding(
+                                      padding: EdgeInsets.only(left: 12),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              "Upcoming Events",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 35),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    const ListTile(
+                                      title: Text(
+                                        "June 13",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 16),
+                                      ),
+                                      subtitle: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              "Equity Index Roll date (index)",
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  decorationColor: Colors.blue,
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                  color: Colors.blue),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const ListTile(
+                                      title: Text(
+                                        "June  14",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 16),
+                                      ),
+                                      subtitle: Row(
+                                        children: [
+                                          Text(
+                                            "FOMC Meeting",
+                                            style: TextStyle(
+                                                decorationColor: Colors.blue,
+                                                decoration:
+                                                    TextDecoration.underline,
+                                                color: Colors.blue),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const ListTile(
+                                      title: Text(
+                                        "June  15",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 16),
+                                      ),
+                                      subtitle: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Text(
+                                              "Currency Future Rolls Date (Jun)",
+                                              style: TextStyle(
+                                                  decorationColor: Colors.blue,
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                  color: Colors.blue),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(20.0),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                            color:
+                                                Colors.blue.withOpacity(0.20),
+                                            border:
+                                                Border.all(color: Colors.blue)),
+                                        height: 50,
+                                        width: double.infinity,
+                                        child: const Center(
+                                          child: Text(
+                                            "Var todio",
+                                            style: TextStyle(
+                                                color: Colors.black,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ))
+                          )),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),

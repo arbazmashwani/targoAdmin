@@ -21,9 +21,10 @@ class _LeftbarpageState extends State<Leftbarpage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
           color: Colors.white, border: Border.all(color: Colors.black12)),
-      child: SingleChildScrollView(
+      child: Container(
         child: Column(
           children: [
             const SizedBox(
@@ -88,8 +89,10 @@ class _LeftbarpageState extends State<Leftbarpage> {
                     }),
               ),
             ),
-            Container(
-              height: 30,
+            Expanded(
+              child: Container(
+                height: 30,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(left: 20, right: 20),
@@ -152,9 +155,6 @@ class _LeftbarpageState extends State<Leftbarpage> {
                         letterSpacing: 1, color: Colors.blue, fontSize: 16),
                   )),
             ),
-            Container(
-              height: 20,
-            )
           ],
         ),
       ),

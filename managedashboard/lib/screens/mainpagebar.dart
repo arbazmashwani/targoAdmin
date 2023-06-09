@@ -227,28 +227,21 @@ class _MainPageBarState extends State<MainPageBar> {
                       height: 20,
                     ),
                     SizedBox(
-                      height: 880,
+                      height: 1000,
                       child: Container(
                         decoration: BoxDecoration(
                             border: Border.all(color: Colors.black12)),
                         child: Column(
                           children: [
-                            const Padding(
+                            Padding(
                               padding: EdgeInsets.all(8.0),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   SizedBox(
-                                    height: 70,
-                                    child: Text(
-                                      "\$346.62",
-                                      // "\$${userList.fold(0, (previousValue, element) => previousValue + int.parse(element.amount.toString())).toString()}",
-                                      style: TextStyle(
-                                          fontSize: 60,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
+                                      height: 70,
+                                      child: Image.asset("images/amount.png")),
                                   Icon(
                                     Icons.restart_alt,
                                     color: Colors.blue,
@@ -347,12 +340,19 @@ class _MainPageBarState extends State<MainPageBar> {
                                       height: 100,
                                       child: Row(
                                         children: [
+                                          SizedBox(
+                                            width: 10,
+                                          ),
                                           Expanded(
                                               child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
                                                 "luquidt neza",
                                                 style: TextStyle(
+                                                  fontFamily: "Aerial",
+                                                  fontSize: 18,
                                                   fontWeight: FontWeight.bold,
                                                 ),
                                               ),
@@ -360,7 +360,7 @@ class _MainPageBarState extends State<MainPageBar> {
                                                 height: 5,
                                               ),
                                               Text(
-                                                "\$362",
+                                                "\$346.42",
                                                 style: TextStyle(
                                                     color: Colors.grey),
                                               )
@@ -368,10 +368,14 @@ class _MainPageBarState extends State<MainPageBar> {
                                           )),
                                           Expanded(
                                               child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "luquidt neza",
+                                                "G/P",
                                                 style: TextStyle(
+                                                    fontFamily: "Aerial",
+                                                    fontSize: 18,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -379,7 +383,7 @@ class _MainPageBarState extends State<MainPageBar> {
                                                 height: 5,
                                               ),
                                               Text(
-                                                "\$362",
+                                                "\$0",
                                                 style: TextStyle(
                                                     color: Colors.grey),
                                               )
@@ -387,10 +391,14 @@ class _MainPageBarState extends State<MainPageBar> {
                                           )),
                                           Expanded(
                                               child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "luquidt neza",
+                                                "PNL",
                                                 style: TextStyle(
+                                                    fontFamily: "Aerial",
+                                                    fontSize: 18,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -398,7 +406,7 @@ class _MainPageBarState extends State<MainPageBar> {
                                                 height: 5,
                                               ),
                                               Text(
-                                                "\$362",
+                                                "\$0",
                                                 style: TextStyle(
                                                     color: Colors.grey),
                                               )
@@ -406,10 +414,14 @@ class _MainPageBarState extends State<MainPageBar> {
                                           )),
                                           Expanded(
                                               child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "luquidt neza",
+                                                "Margin Disponible",
                                                 style: TextStyle(
+                                                    fontFamily: "Aerial",
+                                                    fontSize: 18,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -417,7 +429,7 @@ class _MainPageBarState extends State<MainPageBar> {
                                                 height: 5,
                                               ),
                                               Text(
-                                                "\$362",
+                                                "\$346.42",
                                                 style: TextStyle(
                                                     color: Colors.grey),
                                               )
@@ -431,7 +443,7 @@ class _MainPageBarState extends State<MainPageBar> {
                                       child: Row(
                                         children: [
                                           Text(
-                                            "Tus Posinious q",
+                                            "Tus posisiones",
                                             style: TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 30),
@@ -446,12 +458,19 @@ class _MainPageBarState extends State<MainPageBar> {
                                       height: 30,
                                       child: Row(
                                         children: [
+                                          SizedBox(
+                                            width: 10,
+                                          ),
                                           Expanded(
                                               child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
                                                 "simbolo",
                                                 style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontFamily: "Aerial",
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -459,10 +478,14 @@ class _MainPageBarState extends State<MainPageBar> {
                                           )),
                                           Expanded(
                                               child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
                                                 "direction",
                                                 style: TextStyle(
+                                                    fontFamily: "Aerial",
+                                                    fontSize: 18,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -470,10 +493,14 @@ class _MainPageBarState extends State<MainPageBar> {
                                           )),
                                           Expanded(
                                               child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
                                                 "Position",
                                                 style: TextStyle(
+                                                    fontFamily: "Aerial",
+                                                    fontSize: 18,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -481,10 +508,14 @@ class _MainPageBarState extends State<MainPageBar> {
                                           )),
                                           Expanded(
                                               child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "Gp",
+                                                "G/P",
                                                 style: TextStyle(
+                                                    fontFamily: "Aerial",
+                                                    fontSize: 18,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
@@ -501,13 +532,15 @@ class _MainPageBarState extends State<MainPageBar> {
                                       child: Column(
                                         children: [
                                           SizedBox(
-                                              height: 150,
+                                              height: 200,
                                               child: Column(
                                                 children: [
                                                   Container(
-                                                    height: 100,
+                                                    height: 130,
                                                     child: Image.asset(
-                                                        "images/clip.png"),
+                                                      "images/clip.png",
+                                                      fit: BoxFit.fill,
+                                                    ),
                                                   ),
                                                   Text(
                                                     "Tus puestos abiertos aperecerian aqui",
@@ -568,7 +601,11 @@ class _MainPageBarState extends State<MainPageBar> {
                                   children: ["", "", ""]
                                       .map((e) => Container(
                                             height: 250,
-                                            width: 230,
+                                            width: (MediaQuery.of(context)
+                                                        .size
+                                                        .width -
+                                                    550) /
+                                                3.5,
                                             decoration: BoxDecoration(
                                                 border: Border.all(
                                                     color: Colors.black12)),
@@ -577,7 +614,7 @@ class _MainPageBarState extends State<MainPageBar> {
                                                   MainAxisAlignment.center,
                                               children: [
                                                 Container(
-                                                  height: 100,
+                                                  height: 130,
                                                   child: Image.asset(
                                                       "images/lock.png"),
                                                 ),
@@ -598,6 +635,8 @@ class _MainPageBarState extends State<MainPageBar> {
                                                   children: [
                                                     Text(
                                                       "finish a month with non zero realized profit\n (including fees and collection)",
+                                                      textAlign:
+                                                          TextAlign.center,
                                                       style: TextStyle(
                                                           height: 2,
                                                           letterSpacing: 0.2,

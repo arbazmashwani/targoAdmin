@@ -16,6 +16,8 @@ class _HomePageChartState extends State<HomePageChart> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SizedBox(
+      height: MediaQuery.of(context).size.height,
+      width: MediaQuery.of(context).size.width,
       child: Row(
         children: [
           const Expanded(flex: 3, child: Leftbarpage()),
